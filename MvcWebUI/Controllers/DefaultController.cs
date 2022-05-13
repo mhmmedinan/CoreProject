@@ -12,5 +12,10 @@ namespace MvcWebUI.Controllers
         {
             return View();
         }
+
+        public PartialViewResult HeaderPartial()
+        {
+            return PartialView();
+        }
     }
 }
