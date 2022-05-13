@@ -17,5 +17,10 @@ namespace MvcWebUI.Controllers
         {
             return PartialView();
         }
+
+        public PartialViewResult NavbarPartial()
+        {
+            return PartialView();
+        }
     }
 }
