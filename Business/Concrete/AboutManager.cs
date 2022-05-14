@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class AboutManager:IAboutService
     {
-        private IAboutDal _aboutDal;
+        private readonly IAboutDal _aboutDal;
 
         public AboutManager(IAboutDal aboutDal)
         {

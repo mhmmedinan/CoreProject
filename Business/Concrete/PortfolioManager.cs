@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class PortfolioManager:IPortfolioService
     {
-        private IPortfolioDal _portfolioDal;
+        private readonly IPortfolioDal _portfolioDal;
 
         public PortfolioManager(IPortfolioDal portfolioDal)
         {

@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class ServiceManager:IServiceService
     {
-        private IServiceDal _serviceDal;
+        private readonly IServiceDal _serviceDal;
 
         public ServiceManager(IServiceDal serviceDal)
         {

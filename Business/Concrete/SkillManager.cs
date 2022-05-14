@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class SkillManager:ISkillService
     {
-        private ISkillDal _skillDal;
+        private readonly ISkillDal _skillDal;
 
         public SkillManager(ISkillDal skillDal)
         {

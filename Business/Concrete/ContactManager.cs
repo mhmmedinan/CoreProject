@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class ContactManager:IContactService
     {
-        private IContactDal _contactDal;
+        private readonly IContactDal _contactDal;
 
         public ContactManager(IContactDal contactDal)
         {

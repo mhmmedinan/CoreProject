@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class MessageManager:IMessageService
     {
-        private IMessageDal _messageDal;
+        private readonly IMessageDal _messageDal;
 
         public MessageManager(IMessageDal messageDal)
         {

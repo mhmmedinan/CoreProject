@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class SocialMediaManager:ISocialMediaService
     {
-        private ISocialMediaDal _socialMediaDal;
+        private readonly ISocialMediaDal _socialMediaDal;
 
         public SocialMediaManager(ISocialMediaDal socialMediaDal)
         {

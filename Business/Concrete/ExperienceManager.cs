@@ -12,7 +12,7 @@ namespace Business.Concrete
 {
     public class ExperienceManager:IExperienceService
     {
-        private IExperienceDal _experienceDal;
+        private readonly IExperienceDal _experienceDal;
 
         public ExperienceManager(IExperienceDal experienceDal)
         {

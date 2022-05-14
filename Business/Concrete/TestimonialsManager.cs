@@ -10,9 +10,9 @@ using Entities.Concrete;
 
 namespace Business.Concrete
 {
-    public class TestimonialsManager:ITestimonialsServices
+    public class TestimonialsManager:ITestimonialsService
     {
-        private ITestimonialsDal _testimonialsDal;
+        private readonly ITestimonialsDal _testimonialsDal;
 
         public TestimonialsManager(ITestimonialsDal testimonialsDal)
         {
