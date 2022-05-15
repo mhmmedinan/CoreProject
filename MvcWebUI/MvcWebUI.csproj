@@ -14,4 +14,8 @@
     <ProjectReference Include="..\Entity\Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\Components\ServiceList\" />
+  </ItemGroup>
+
 </Project>
