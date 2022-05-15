@@ -42,7 +42,7 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SocialMediaManager>().As<ISocialMediaService>().SingleInstance();
             builder.RegisterType<EfSocialMediaDal>().As<ISocialMediaDal>().SingleInstance();
 
-            builder.RegisterType<TestimonialsManager>().As<ITestimonialsService>().SingleInstance();
+            builder.RegisterType<TestimonialManager>().As<ITestimonialService>().SingleInstance();
             builder.RegisterType<EfTestimonialsDal>().As<ITestimonialsDal>().SingleInstance();
         }
     }
