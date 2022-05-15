@@ -19,7 +19,7 @@ namespace MvcWebUI.ViewComponents.Experience
         public IViewComponentResult Invoke()
         {
             var values = _experienceService.TGetAll();
-            return View(values.Data);
+            return View(values.Data); 
         }
     }
 }
