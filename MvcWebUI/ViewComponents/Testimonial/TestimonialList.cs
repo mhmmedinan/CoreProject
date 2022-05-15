@@ -19,7 +19,7 @@ namespace MvcWebUI.ViewComponents.Testimonial
         public IViewComponentResult Invoke()
         {
             var values = _testimonialService.TGetAll();
-            return View(values.Data);
+            return View(values.Data); 
         }
     }
 }
