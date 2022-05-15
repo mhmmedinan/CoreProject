@@ -8,7 +8,7 @@ using Core.Entities;
 
 namespace Entities.Concrete
 {
-    public class Testimonials : IEntity
+    public class Testimonial : IEntity
     {
         [Key]
         public int Id { get; set; }
@@ -16,6 +16,7 @@ namespace Entities.Concrete
         public string Company { get; set; }
         public string Comment { get; set; }
         public string ImageUrl { get; set; }
+        public string Title { get; set; }
 
     }
 }

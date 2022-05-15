@@ -8,7 +8,7 @@ using Entities.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface ITestimonialsDal: IEntityRepository<Testimonials>
+    public interface ITestimonialDal: IEntityRepository<Testimonial>
     {
     }
 }
