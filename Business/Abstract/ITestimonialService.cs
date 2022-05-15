@@ -7,7 +7,7 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-    public interface ITestimonialsService: IGenericService<Testimonials>
+    public interface ITestimonialService: IGenericService<Testimonial>
     {
     }
 }
