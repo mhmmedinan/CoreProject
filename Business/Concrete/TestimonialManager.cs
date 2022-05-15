@@ -12,9 +12,9 @@ namespace Business.Concrete
 {
     public class TestimonialManager:ITestimonialService
     {
-        private readonly ITestimonialsDal _testimonialsDal;
+        private readonly ITestimonialDal _testimonialsDal;
 
-        public TestimonialManager(ITestimonialsDal testimonialsDal)
+        public TestimonialManager(ITestimonialDal testimonialsDal)
         {
             _testimonialsDal = testimonialsDal;
         }
