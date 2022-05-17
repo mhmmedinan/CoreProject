@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="card col-md-10 offset-md-1">
+    <div class="card-header border-0">
+        <h3 class="mb-0">Deneyim Ekleme Sayfası</h3>
+    </div>
+
+
+    <form class="form-group col-md-12" method="post">
+        <div class="mb-3">
+            <label>Başlık</label>
+            <input type="text" name="Name" class="form-control"/>
+            <br/>
+            <label>Tarih</label>
+            <input type="text" name="Date" class="form-control"/>
+            <br/>
+            <label>Resim Yolu</label>
+            <input type="text" name="ImageUrl" class="form-control"/>
+            <br/>
+            <label>Açıklama</label>
+            <textarea type="text" name="Description" class="form-control"></textarea>
+            <br/>
+        </div>
+        <button type="submit" class="btn btn-primary">Ekle</button>
+    </form>
+</div>
+

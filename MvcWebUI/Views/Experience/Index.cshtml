@@ -1,0 +1,46 @@
+﻿@using Entities.Concrete
+@model List<Experience>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Deneyimler Listesi</h3>
+</div>
+
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col" class="sort" data-sort="name">#</th>
+            <th scope="col" class="sort" data-sort="budget">Başlık</th>
+            <th scope="col" class="sort" data-sort="status">Tarih</th>
+            <th scope="col">Sİl</th>
+            <th scope="col" class="sort" data-sort="completion">Düzenle</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody class="list">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Id</th>
+                <td class="budget">
+                    @item.Name
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Sil</a></td>
+                <td><a asp-action="Update" asp-route-id="@item.Id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <a asp-action="Add"  class="btn btn-primary">Deneyim Ekle</a>
+</div>
+
+
+
+
