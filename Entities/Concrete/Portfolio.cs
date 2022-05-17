@@ -16,5 +16,9 @@ namespace Entities.Concrete
         public string ImageUrl { get; set; }
         public string ProjectUrl { get; set; }
         public string ImageUrl2 { get; set; }
+        public string Platform { get; set; }
+        public decimal Price { get; set; }
+        public bool Status { get; set; }
+        public int  Value { get; set; }
     }
 }
