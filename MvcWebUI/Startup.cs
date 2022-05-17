@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.ValidationRules;
+using FluentValidation.AspNetCore;
 
 namespace MvcWebUI
 {
@@ -23,7 +25,9 @@ namespace MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddFluentValidation((fv=>fv.RegisterValidatorsFromAssemblyContaining<PortfolioValidator>()));
+           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
