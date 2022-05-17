@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.ValidationRules;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -29,6 +31,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Portfolio>(_portfolioDal.Get(x => x.Id == id), "Id'ye göre listeleme işlemi başarılı");
         }
 
+        [ValidationAspect(typeof(PortfolioValidator))]
         public IResult TAdd(Portfolio portfolio)
         {
             _portfolioDal.Add(portfolio);
@@ -41,6 +44,7 @@ namespace Business.Concrete
             return new SuccessResult("Silme işlemi başarılı");
         }
 
+        [ValidationAspect(typeof(PortfolioValidator))]
         public IResult TUpdate(Portfolio portfolio)
         {
             _portfolioDal.Update(portfolio);
