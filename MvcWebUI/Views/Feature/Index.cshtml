@@ -1,0 +1,29 @@
+﻿@model Entities.Concrete.Feature
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card col-md-10 offset-md-1">
+    <div class="card-header border-0">
+        <h3 class="mb-0">Öne Çıkan Güncelleme Sayfası</h3>
+    </div>
+
+    @using (Html.BeginForm("Index", "Feature", FormMethod.Post))
+    {
+        <div class="mb-3">
+            @Html.HiddenFor(x => x.Id)
+            @Html.Label("Başlık")
+            @Html.TextBoxFor(x => x.Header, new { @class = "form-control" })
+            <br />
+            @Html.Label("Ad-Soyad")
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            <br />
+            @Html.Label("Pozisyon")
+            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+            <br />
+        </div>
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+    }
+</div>
+
