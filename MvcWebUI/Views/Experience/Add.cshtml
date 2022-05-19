@@ -1,32 +1,38 @@
 ﻿
 @{
     ViewData["Title"] = "Add";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
 
-<div class="card col-md-10 offset-md-1">
-    <div class="card-header border-0">
-        <h3 class="mb-0">Deneyim Ekleme Sayfası</h3>
-    </div>
-
-
-    <form class="form-group col-md-12" method="post">
-        <div class="mb-3">
-            <label>Başlık</label>
-            <input type="text" name="Name" class="form-control"/>
-            <br/>
-            <label>Tarih</label>
-            <input type="text" name="Date" class="form-control"/>
-            <br/>
-            <label>Resim Yolu</label>
-            <input type="text" name="ImageUrl" class="form-control"/>
-            <br/>
-            <label>Açıklama</label>
-            <textarea type="text" name="Description" class="form-control"></textarea>
-            <br/>
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description" style="font-size: 18px">Yeni Deneyim Ekleme </p>
+            <form class="forms-sample" method="post">
+                <div class="form-group">
+                    <label>Başlık</label>
+                    <input type="text" name="Name" class="form-control" />
+                    <br />
+                </div>
+                <div class="form-group">
+                    <label>Tarih</label>
+                    <input type="text" name="Date" class="form-control" />
+                    <br />
+                </div>
+                <div class="form-group">
+                    <label>Resim Yolu</label>
+                    <input type="text" name="ImageUrl" class="form-control" />
+                    <br />
+                </div>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea type="text" name="Description" class="form-control"></textarea>
+                    <br />
+                </div>
+                <button type="submit" class="btn btn-primary">Ekle</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Ekle</button>
-    </form>
+    </div>
 </div>
-
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/js/vendor.bundle.base.js"></script>

@@ -50,5 +50,10 @@ namespace Business.Concrete
             _portfolioDal.Update(portfolio);
             return new SuccessResult("Güncelleme işlemi başarılı");
         }
+
+        public IDataResult<List<Portfolio>> GetAllTop5()
+        {
+            return new SuccessDataResult<List<Portfolio>>(_portfolioDal.GetAll().OrderByDescending(x => x.Id).Take(5).ToList());
+        }
     }
 }

@@ -1,27 +1,28 @@
 ﻿@model Entities.Concrete.Skill
 @{
     ViewData["Title"] = "Update";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
-<div class="card col-md-10 offset-md-1">
-    <div class="card-header border-0">
-        <h3 class="mb-0">Yetenek Güncelleme Sayfası</h3>
+<div class="col-12 grid-margin stretch-card">
+<div class="card">
+    <div class="card-body">
+        <p class="card-description" style="font-size: 18px">Yetenek Güncelleme </p>
+
+        @using (Html.BeginForm("Update", "Skill", FormMethod.Post))
+        {
+            <div class="mb-3">
+                @Html.HiddenFor(x => x.Id)
+                @Html.Label("Başlık")
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                <br />
+                @Html.Label("Değer")
+                @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
+                <br />
+            </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
+        }
     </div>
-
-    @using (Html.BeginForm("Update", "Skill", FormMethod.Post))
-    {
-        <div class="mb-3">
-            @Html.HiddenFor(x => x.Id)
-            @Html.Label("Başlık")
-            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
-            <br />
-            @Html.Label("Değer")
-            @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
-            <br />
-        </div>
-        <button type="submit" class="btn btn-primary">Güncelle</button>
-    }
 </div>
-
-
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/js/vendor.bundle.base.js"></script>

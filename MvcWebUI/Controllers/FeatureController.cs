@@ -19,9 +19,9 @@ namespace MvcWebUI.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.v1 = "Düzenleme";
+            ViewBag.v1 = "Öne Çıkan Güncelleme";
             ViewBag.v2 = "Öne Çıkanlar";
-            ViewBag.v3 = "Öne Çıkan Sayfası";
+            ViewBag.v3 = "Öne Çıkan Güncelleme";
             var values = _featureService.TGetById(1);
             return View(values.Data);
         }
