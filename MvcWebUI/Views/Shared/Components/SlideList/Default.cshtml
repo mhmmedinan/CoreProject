@@ -1,0 +1,17 @@
+﻿@using Entities.Concrete
+@model List<Portfolio>
+
+<div class="col-md-6 col-xl-4 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Ekran Görüntüleri</h4>
+            <div class="owl-carousel owl-theme full-width owl-carousel-dash portfolio-carousel" id="owl-carousel-basic">
+                @foreach(var item in Model) { 
+                <div class="item">
+                    <img style="width: 355px;height: 485px" src="@item.ImageUrl" alt="">
+                </div>
+                }
+            </div>
+           </div>
+    </div>
+</div>

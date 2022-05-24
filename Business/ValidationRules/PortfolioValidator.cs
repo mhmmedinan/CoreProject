@@ -12,7 +12,8 @@ namespace Business.ValidationRules
     {
         public PortfolioValidator()
         {
-            RuleFor(x => x.Name).NotEmpty().WithMessage("Proje Adı Boş Geçilemez");
+            RuleFor(x => x.Name).NotEmpty().WithMessage("Proje adı boş geçilemez");
+            RuleFor(x => x.Date).NotEmpty().WithMessage("Tarih alanı boş Geçilemez");
             RuleFor(x => x.ImageUrl).NotEmpty().WithMessage("Görsel alanı boş geçilemez");
             RuleFor(x => x.ImageUrl2).NotEmpty().WithMessage("Görsel2 alanı boş geçilemez");
             RuleFor(x => x.ProjectUrl).NotEmpty().WithMessage("Proje Url alanı boş geçilemez");

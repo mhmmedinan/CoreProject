@@ -43,6 +43,11 @@
             @Html.TextBoxFor(x => x.Value, new { @class = "form-control" })
             @Html.ValidationMessageFor(x => x.Value)
             <br />
+
+            @Html.Label("Tarih")
+            @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.Date)
+            <br />
             <button type="submit" class="btn btn-primary">Ekle</button>
         }
 

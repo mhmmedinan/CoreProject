@@ -44,6 +44,14 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<TestimonialManager>().As<ITestimonialService>().SingleInstance();
             builder.RegisterType<EfTestimonialDal>().As<ITestimonialDal>().SingleInstance();
+
+            builder.RegisterType<UserMessageManager>().As<IUserMessageService>().SingleInstance();
+            builder.RegisterType<EfUserMessageDal>().As<IUserMessageDal>().SingleInstance();
+
+            builder.RegisterType<ToDoListManager>().As<IToDoListService>().SingleInstance();
+            builder.RegisterType<EfToDoListDal>().As<IToDoListDal>().SingleInstance();
+
+
         }
     }
 }

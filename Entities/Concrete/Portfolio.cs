@@ -20,5 +20,6 @@ namespace Entities.Concrete
         public decimal Price { get; set; }
         public bool Status { get; set; }
         public int  Value { get; set; }
+        public string Date { get; set; }
     }
 }
