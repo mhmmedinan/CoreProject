@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MvcWebUI.Controllers
+namespace MvcWebUI.Areas.Writer.Controllers
 {
-    public class TestController : Controller
+    [Area("User")]
+    public class DefaultController : Controller
     {
         public IActionResult Index()
         {

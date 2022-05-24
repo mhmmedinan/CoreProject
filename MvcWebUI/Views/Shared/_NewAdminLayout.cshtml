@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Corona Admin</title>
+    <title>Admin Panel</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/css/vendor.bundle.base.css">
@@ -28,8 +28,8 @@
         <!-- partial:../../partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="../../index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/images/logo.svg" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="../../index.html"><img src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/images/logo-mini.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo" asp-controller="Dashboard" asp-action="Index"><h3>Admin Panel</h3></a>
+                <a class="sidebar-brand brand-logo-mini" asp-controller="Dashboard" asp-action="Index"><h3>AP</h3></a>
             </div>
             @await Html.PartialAsync("/Views/Admin/NewSideBar.cshtml")
         </nav>
