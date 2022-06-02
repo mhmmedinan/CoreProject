@@ -1,0 +1,20 @@
+﻿@model Entities.Concrete.UserMessage
+@{
+    ViewData["Title"] = "ReceivedMessageDetails";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h3>Mesaj Detayları</h3>
+                <h5>Alıcı Adı: @Model.ReceiverName</h5>
+                <h5>Alıcı Mail: @Model.Receiver</h5>
+                <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</h5>
+                <h6 class="card-description">@Model.MessageContent</h6>
+            </div>
+        </div>
+    </div>
+</div>
+

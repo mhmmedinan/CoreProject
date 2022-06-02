@@ -7,16 +7,20 @@ using Business.Abstract;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dto;
+using Microsoft.AspNetCore.Identity;
 
 namespace Business.Concrete
 {
-    public class UserMessageManager:IUserMessageService
+    public class UserMessageManager : IUserMessageService
     {
         private readonly IUserMessageDal _userMessageDal;
+        
 
         public UserMessageManager(IUserMessageDal userMessageDal)
         {
             _userMessageDal = userMessageDal;
+            
         }
 
         public IDataResult<List<UserMessage>> TGetAll()
@@ -47,6 +51,16 @@ namespace Business.Concrete
             return new SuccessResult("Güncelleme işlemi başarılı");
         }
 
-       
+        public IDataResult<List<UserMessage>> GetListReceiverMessage(string receiver)
+        {
+            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Receiver == receiver));
+        }
+
+        public IDataResult<List<UserMessage>> GetListSenderMessage(string sender)
+        {
+            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Sender == sender));
+        }
+
+        
     }
 }

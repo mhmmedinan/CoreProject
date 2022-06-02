@@ -1,0 +1,20 @@
+﻿@model Entities.Concrete.UserMessage
+@{
+    ViewData["Title"] = "SendMessage";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Yeni Mesaj Gönderme</h1>
+<br/>
+<form class="form-group" method="post">
+    @Html.Label("Alıcı Mail")
+    <input type="email" class="form-control" asp-for="Receiver"/>
+    <br/>
+    @Html.Label("Konu")
+    @Html.TextBoxFor(x=>x.Subject,new {@class ="form-control"})
+    <br/>
+    @Html.Label("Mesaj")
+    @Html.TextBoxFor(x=>x.MessageContent,new {@class ="form-control"})
+    <button class="btn btn-outline-primary">Gönder</button>
+</form>
+
