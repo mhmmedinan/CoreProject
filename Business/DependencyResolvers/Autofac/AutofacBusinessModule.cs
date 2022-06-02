@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Extras.DynamicProxy;
 using Business.Abstract;
 using Business.Concrete;
+using Castle.DynamicProxy;
+using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 
@@ -50,6 +53,17 @@ namespace Business.DependencyResolvers.Autofac
 
             builder.RegisterType<ToDoListManager>().As<IToDoListService>().SingleInstance();
             builder.RegisterType<EfToDoListDal>().As<IToDoListDal>().SingleInstance();
+
+            builder.RegisterType<AnnouncementManager>().As<IAnnouncementService>().SingleInstance();
+            builder.RegisterType<EfAnnouncementDal>().As<IAnnouncementDal>().SingleInstance();
+
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
+                .EnableInterfaceInterceptors(new ProxyGenerationOptions()
+                {
+                    Selector = new AspectInterceptorSelector()
+                }).SingleInstance();
 
 
         }

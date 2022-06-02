@@ -10,6 +10,6 @@ namespace Business.Abstract
 {
     public interface IUserMessageService:IGenericService<UserMessage>
     {
-        IDataResult<List<UserMessage>> GetUserMessageWithUser();
+       
     }
 }

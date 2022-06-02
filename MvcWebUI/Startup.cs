@@ -8,8 +8,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Abstract;
+using Business.Concrete;
 using Business.ValidationRules;
+using Core.DependencyResolvers;
+using Core.Extensions;
+using Core.Utilities.IoC;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
+using Entities.Dto;
 using FluentValidation.AspNetCore;
+using MvcWebUI.Extension;
 
 namespace MvcWebUI
 {
@@ -25,9 +34,11 @@ namespace MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>();
+            services.AddIdentity<UserDto, UserRoleDto>().AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews().AddFluentValidation((fv=>fv.RegisterValidatorsFromAssemblyContaining<PortfolioValidator>()));
-           
-
+            services.AddSingletonService();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +56,7 @@ namespace MvcWebUI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

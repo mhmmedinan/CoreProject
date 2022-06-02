@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Core.DataAccess;
-using Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 
-namespace DataAccess.Abstract
+namespace Entities.Dto
 {
-    public interface IUserDal:IEntityRepository<User>
+    public class UserRoleDto:IdentityRole<int>
     {
     }
 }

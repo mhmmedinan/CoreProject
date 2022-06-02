@@ -18,8 +18,8 @@ namespace MvcWebUI.ViewComponents.Dashboard
 
         public IViewComponentResult Invoke()
         {
-            var values = _userMessageService.GetUserMessageWithUser();
-            return View(values.Data);
+            
+            return View();
         }
     }
 }

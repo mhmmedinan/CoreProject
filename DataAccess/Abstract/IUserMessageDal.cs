@@ -10,6 +10,6 @@ namespace DataAccess.Abstract
 {
     public interface IUserMessageDal:IEntityRepository<UserMessage>
     {
-        public List<UserMessage> GetUserMessagesWithUser();
+        
     }
 }

@@ -47,9 +47,6 @@ namespace Business.Concrete
             return new SuccessResult("Güncelleme işlemi başarılı");
         }
 
-        public IDataResult<List<UserMessage>> GetUserMessageWithUser()
-        {
-            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetUserMessagesWithUser());
-        }
+       
     }
 }

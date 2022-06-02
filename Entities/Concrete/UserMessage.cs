@@ -10,12 +10,13 @@ namespace Entities.Concrete
 {
     public class UserMessage:IEntity
     {
-        [Key] public int Id { get; set; }
-        public string Title { get; set; }
-        public string Content { get; set; }
+        [Key] 
+        public int Id { get; set; }
+        public string Sender { get; set; }
+        public string Receiver { get; set; }
+        public string Subject { get; set; }
+        public string MessageContent { get; set; }
         public DateTime Date { get; set; }
-        public bool Status { get; set; }
-        public int UserId { get; set; }
-        public User User { get; set; }
+      
     }
 }
