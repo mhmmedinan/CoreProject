@@ -1,20 +1,22 @@
-﻿@model Entities.Concrete.Announcement
+﻿@model Entities.Concrete.Message
 @{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewData["Title"] = "ContactDetails";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
+
 <div class="row">
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h3 >Duyuru Detayları</h3>
-                <hr/>
-                <h5 >Başlık: @Model.Title</h5>
+                <h3>İletişim Detayları</h3>
+                <hr />
+                <h5>Gönderen: @Model.Name</h5>
+                <h5>Mail: @Model.Mail</h5>
                 <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</h5>
-                <h5 >Tür: @Model.Status</h5>
-                <hr/>
+                <hr />
                 <h6 class="card-description">@Model.Content</h6>
             </div>
         </div>
     </div>
 </div>
+

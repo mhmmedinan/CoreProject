@@ -60,11 +60,27 @@
         </a>
     </li>
     <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+        <a class="nav-link" asp-controller="Default" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-home"></i>
+            </span>
+            <span class="menu-title">Siteye Git</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" asp-controller="AdminMessage" asp-action="ReceiverMessageList">
             <span class="menu-icon">
                 <i class="mdi mdi-message"></i>
             </span>
-            <span class="menu-title">Mesajlar</span>
+            <span class="menu-title">Gelen Mesajlar</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" asp-controller="AdminMessage" asp-action="SenderMessageList">
+            <span class="menu-icon">
+                <i class="mdi mdi-message"></i>
+            </span>
+            <span class="menu-title">Gönderilen Mesajlar</span>
         </a>
     </li>
     <li class="nav-item menu-items">
@@ -84,7 +100,7 @@
         </a>
     </li>
     <li class="nav-item menu-items">
-        <a class="nav-link" asp-controller="Portfolio" asp-action="Index"> 
+        <a class="nav-link" asp-controller="Portfolio" asp-action="Index">
             <span class="menu-icon">
                 <i class="mdi mdi-github-circle"></i>
             </span>
@@ -105,6 +121,14 @@
                 <i class="mdi mdi-percent"></i>
             </span>
             <span class="menu-title">Yetenekler</span>
+        </a>
+    </li>
+    <li class="nav-item menu-items">
+        <a class="nav-link" asp-controller="Contact" asp-action="Index">
+            <span class="menu-icon">
+                <i class="mdi mdi-phone"></i>
+            </span>
+            <span class="menu-title">İletişim</span>
         </a>
     </li>
     <li class="nav-item menu-items">

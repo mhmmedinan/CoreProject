@@ -12,6 +12,7 @@ namespace MvcWebUI.Areas.User.Controllers
 {
     [Area("User")]
     [Authorize]
+    [Route("User/[controller]/[action]")]
     public class DashboardController : Controller
     {
         private readonly UserManager<UserDto> _userManager;

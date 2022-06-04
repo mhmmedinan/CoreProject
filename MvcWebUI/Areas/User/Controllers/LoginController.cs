@@ -11,7 +11,8 @@ using MvcWebUI.Areas.User.Models;
 namespace MvcWebUI.Areas.User.Controllers
 {
     [Area("User")]
-   public class LoginController : Controller
+    [Route("User/[controller]/[action]")]
+    public class LoginController : Controller
     {
         private readonly SignInManager<UserDto> _signInManager;
 
@@ -35,7 +36,7 @@ namespace MvcWebUI.Areas.User.Controllers
                     userLoginViewModel.Password, true, true);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Default");
+                    return RedirectToAction("Index", "Dashboard");
                 }
                 else
                 {
@@ -44,6 +45,12 @@ namespace MvcWebUI.Areas.User.Controllers
             }
 
             return View();
+        }
+
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

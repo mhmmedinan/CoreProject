@@ -13,6 +13,7 @@ namespace Business.Abstract
     {
         IDataResult<List<UserMessage>> GetListReceiverMessage(string receiver);
         IDataResult<List<UserMessage>> GetListSenderMessage(string sender);
-       
+        IDataResult<UserMessage> TrueReadMessage(int id);
+
     }
 }

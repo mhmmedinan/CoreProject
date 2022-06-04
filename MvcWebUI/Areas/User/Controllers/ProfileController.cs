@@ -5,12 +5,15 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Entities.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using MvcWebUI.Areas.User.Models;
 
 namespace MvcWebUI.Areas.User.Controllers
 {
     [Area("User")]
+    [Authorize]
+    [Route("User/[controller]/[action]")]
     public class ProfileController : Controller
     {
         private readonly UserManager<UserDto> _userManager;
@@ -55,10 +58,11 @@ namespace MvcWebUI.Areas.User.Controllers
             user.LastName = userEditViewModel.LastName;
             user.Email = userEditViewModel.Email;
             user.UserName = userEditViewModel.Username;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Default");
+                return RedirectToAction("LogOut", "Login");
             }
             return View();
         }

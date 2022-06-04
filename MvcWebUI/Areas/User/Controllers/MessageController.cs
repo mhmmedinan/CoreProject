@@ -8,12 +8,15 @@ using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using Entities.Dto;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace MvcWebUI.Areas.User.Controllers
 {
     [Area("User")]
+    [Authorize]
+    [Route("User/[controller]/[action]")]
     public class MessageController : Controller
     {
         private readonly IUserMessageService _userMessageService;
@@ -42,14 +45,14 @@ namespace MvcWebUI.Areas.User.Controllers
             return View(messageList.Data);
         }
 
+        [HttpGet]
         public IActionResult MessageDetails(int id)
         {
-            var details = _userMessageService.TGetById(id);
+            var details = _userMessageService.TrueReadMessage(id);
             return View(details.Data);
         }
-
-
-        public IActionResult ReceivedMessageDetails(int id)
+        
+        public IActionResult SenderMessageDetails(int id)
         {
             var details = _userMessageService.TGetById(id);
             return View(details.Data);
@@ -67,14 +70,14 @@ namespace MvcWebUI.Areas.User.Controllers
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             var mail = values.Email;
             var name = values.FirstName + " " + values.LastName;
-            userMessage.Date = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            userMessage.Date = Convert.ToDateTime(DateTime.Now);
             userMessage.Sender = mail;
             userMessage.SenderName = name;
             var firstName = _userManager.Users.Where(x => x.Email == userMessage.Receiver)
                 .Select(y => y.FirstName + " " + y.LastName).FirstOrDefault();
             userMessage.ReceiverName = firstName;
             _userMessageService.TAdd(userMessage);
-            return RedirectToAction("SenderMessage", "Message");
+            return RedirectToAction("SenderMessage");
 
         }
 

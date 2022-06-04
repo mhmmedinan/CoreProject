@@ -10,6 +10,7 @@ using MvcWebUI.Areas.User.Models;
 namespace MvcWebUI.Areas.User.Controllers
 {
     [Area("User")]
+    [Route("User/[controller]/[action]")]
     public class RegisterController : Controller
     {
         private readonly UserManager<UserDto> _userManager;

@@ -30,11 +30,13 @@ namespace Business.Concrete
 
         public IDataResult<UserMessage> TGetById(int id)
         {
+          
             return new SuccessDataResult<UserMessage>(_userMessageDal.Get(x => x.Id == id), "Id'ye göre listeleme işlemi başarılı");
         }
 
         public IResult TAdd(UserMessage userMessage)
         {
+            userMessage.Status = false;
             _userMessageDal.Add(userMessage);
             return new SuccessResult("Ekleme işlemi başarılı");
         }
@@ -53,14 +55,20 @@ namespace Business.Concrete
 
         public IDataResult<List<UserMessage>> GetListReceiverMessage(string receiver)
         {
-            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Receiver == receiver));
+            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Receiver == receiver).OrderByDescending(x=>x.Date).ToList());
         }
 
         public IDataResult<List<UserMessage>> GetListSenderMessage(string sender)
         {
-            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Sender == sender));
+            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Sender == sender).OrderByDescending(x => x.Date).ToList());
         }
 
-        
+        public IDataResult<UserMessage> TrueReadMessage(int id)
+        {
+            UserMessage userMessage = TGetById(id).Data;
+            userMessage.Status = true;
+            TUpdate(userMessage);
+            return new SuccessDataResult<UserMessage>(userMessage);
+        }
     }
 }

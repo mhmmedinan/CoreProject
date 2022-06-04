@@ -9,9 +9,11 @@
         <div class="card">
             <div class="card-body">
                 <h3>Mesaj Detayları</h3>
+                <hr/>
                 <h5>Alıcı Adı: @Model.ReceiverName</h5>
                 <h5>Alıcı Mail: @Model.Receiver</h5>
-                <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</h5>
+                <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy HH:mm"))</h5>
+                <hr/>
                 <h6 class="card-description">@Model.MessageContent</h6>
             </div>
         </div>

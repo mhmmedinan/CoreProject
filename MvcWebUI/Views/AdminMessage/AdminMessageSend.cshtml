@@ -1,0 +1,31 @@
+﻿@model Entities.Concrete.UserMessage
+@{
+    ViewData["Title"] = "AdminMessageSend";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description" style="font-size: 18px">Yeni Mesaj Gönderme </p>
+
+
+            <form class="form-group col-md-12" method="post">
+                <div class="mb-3">
+                    <label>Konu</label>
+                    <input type="text" asp-for="Subject" class="form-control" />
+                    <br />
+                    <label>Alıcı</label>
+                    <input type="email" asp-for="Receiver" class="form-control" />
+                    <br />
+                    <label>Mesaj</label>
+                    <textarea type="text" asp-for="MessageContent" class="form-control" ></textarea>
+                    <br />
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/js/vendor.bundle.base.js"></script>
+

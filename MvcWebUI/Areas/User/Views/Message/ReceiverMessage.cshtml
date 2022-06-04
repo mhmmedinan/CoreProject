@@ -27,8 +27,8 @@
                         <tr>
                             <td>@item.Subject</td>
                             <td>@item.SenderName</td>
-                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
-                            <td><a href="/User/Message/MessageDetails/@item.Id"  class="btn btn-outline-primary">Mesajı Gör</a></td>
+                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy HH:mm"))</td>
+                            <td><a asp-controller="Message" asp-action="MessageDetails" asp-route-id="@item.Id"  class="btn btn-outline-primary">Mesajı Gör</a></td>
                         </tr>
                     }
                     </tbody>

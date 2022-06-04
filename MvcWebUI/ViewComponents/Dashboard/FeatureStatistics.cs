@@ -13,7 +13,7 @@ namespace MvcWebUI.ViewComponents.Dashboard
         public IViewComponentResult Invoke()
         {
             ViewBag.v1 = context.Skills.Count();
-            ViewBag.v2 = context.Messages.Where(x=>x.Status==false).Count();
+            ViewBag.v2 = context.UserMessages.Count();
             ViewBag.v3 = context.Messages.Where(x=>x.Status==true).Count();
             ViewBag.v4 = context.Experiences.Count();
             return View();
