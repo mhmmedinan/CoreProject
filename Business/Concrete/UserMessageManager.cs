@@ -70,5 +70,11 @@ namespace Business.Concrete
             TUpdate(userMessage);
             return new SuccessDataResult<UserMessage>(userMessage);
         }
+
+        public IDataResult<List<UserMessage>> GetCountMessageUnRead(string receiver)
+        {
+            return new SuccessDataResult<List<UserMessage>>(_userMessageDal.GetAll(x => x.Receiver == receiver && x.Status==false));
+
+        }
     }
 }

@@ -13,24 +13,24 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th>Konu</th>
-                        <th>Gönderen</th>
-                        <th>Tarih</th>
-                        <th>Detaylar</th>
-                      
-                    </tr>
+                        <tr>
+                            <th>Konu</th>
+                            <th>Gönderen</th>
+                            <th>Tarih</th>
+                            <th>Detaylar</th>
+
+                        </tr>
                     </thead>
                     <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>@item.Subject</td>
-                            <td>@item.SenderName</td>
-                            <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy HH:mm"))</td>
-                            <td><a asp-controller="Message" asp-action="MessageDetails" asp-route-id="@item.Id"  class="btn btn-outline-primary">Mesajı Gör</a></td>
-                        </tr>
-                    }
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Subject</td>
+                                <td>@item.SenderName</td>
+                                <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy HH:mm"))</td>
+                                <td><a asp-controller="Message" asp-action="MessageDetails" asp-route-id="@item.Id" class="btn btn-outline-primary">Mesajı Gör</a></td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

@@ -29,7 +29,7 @@
                             <td>@item.Subject</td>
                             <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
                             <td><a asp-action="ReceiverDelete" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a></td>
-                            <td><a asp-action="AdminMessageDetails" asp-route-id="@item.Id" class="btn btn-outline-success">Mesajı Gör</a></td>
+                            <td><a asp-action="ReceiveMessageDetails" asp-route-id="@item.Id" class="btn btn-outline-success">Mesajı Gör</a></td>
                         </tr>
                     }
 

@@ -1,6 +1,6 @@
-﻿@model Entities.Concrete.UserMessage
+﻿
 @{
-    ViewData["Title"] = "AdminMessageDetails";
+    ViewData["Title"] = "SenderMessageDetails";
     Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
 }
 
@@ -10,14 +10,14 @@
             <div class="card-body">
                 <h3>Mesaj Detayları</h3>
                 <hr />
-                <h5>Gönderen: @Model.SenderName | @Model.Sender</h5>
-                <h5>Alıcı: @Model.ReceiverName | @Model.Receiver</h5>
-                <h5>Konu: @Model.Subject</h5>
-                <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy"))</h5>
+                <h5>Alıcı Adı: @Model.ReceiverName</h5>
+                <h5>Alıcı Mail: @Model.Receiver</h5>
+                <h5>Tarih: @(((DateTime)Model.Date).ToString("dd-MMM-yyyy HH:mm"))</h5>
                 <hr />
                 <h6 class="card-description">@Model.MessageContent</h6>
             </div>
         </div>
     </div>
 </div>
+
 

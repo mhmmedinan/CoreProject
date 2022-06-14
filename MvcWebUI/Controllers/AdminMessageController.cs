@@ -37,10 +37,16 @@ namespace MvcWebUI.Controllers
         }
 
 
-        public IActionResult AdminMessageDetails(int id)
+        public IActionResult ReceiveMessageDetails(int id)
         {
-            var values = _messageService.TGetById(id);
-            return View(values.Data);
+            var details = _messageService.TrueReadMessage(id);
+            return View(details.Data);
+        }
+
+        public IActionResult SenderMessageDetails(int id)
+        {
+            var details = _messageService.TGetById(id);
+            return View(details.Data);
         }
 
         public IActionResult ReceiverDelete(int id)

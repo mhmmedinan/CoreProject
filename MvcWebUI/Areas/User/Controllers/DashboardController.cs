@@ -35,10 +35,12 @@ namespace MvcWebUI.Areas.User.Controllers
             var messageReceiver = _messageService.GetListReceiverMessage(values.Email).Data.Count();
             var messageSender = _messageService.GetListSenderMessage(values.Email).Data.Count();
             var totalMessage = (messageReceiver)+(messageSender);
+           
             ViewBag.v1 = messageReceiver;
             ViewBag.v2 = announcementCount;
             ViewBag.v3 = messageSender;
             ViewBag.v4 = totalMessage;
+           
             return View();
         }
     }

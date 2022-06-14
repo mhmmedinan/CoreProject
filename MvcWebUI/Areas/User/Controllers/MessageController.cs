@@ -63,6 +63,7 @@ namespace MvcWebUI.Areas.User.Controllers
         {
             return View();
         }
+        
 
         [HttpPost]
         public async Task<IActionResult> SendMessage(UserMessage userMessage)

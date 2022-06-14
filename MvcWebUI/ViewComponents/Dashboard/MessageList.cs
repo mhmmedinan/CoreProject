@@ -9,17 +9,18 @@ namespace MvcWebUI.ViewComponents.Dashboard
 {
     public class MessageList:ViewComponent
     {
-        private readonly IUserMessageService _userMessageService;
+        private readonly IMessageService _messageService;
 
-        public MessageList(IUserMessageService userMessageService)
+        public MessageList(IMessageService messageService)
         {
-            _userMessageService = userMessageService;
+            _messageService = messageService;
         }
 
         public IViewComponentResult Invoke()
         {
-            
-            return View();
+            var values = _messageService.TGetAll();
+                
+            return View(values.Data);
         }
     }
 }
