@@ -1,0 +1,39 @@
+﻿@model Entities.Concrete.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <p class="card-description" style="font-size: 18px">Alt İletişim Güncelleme  </p>
+
+            @using (Html.BeginForm("Index", "ContactSubPlace", FormMethod.Post))
+            {
+                <div class="mb-3">
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.Label("Başlık")
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    <br />
+
+                    @Html.Label("Mail")
+                    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Mail")
+                    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Telefon")
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Açıklama")
+                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                    <br />
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/js/vendor.bundle.base.js"></script>
+

@@ -1,0 +1,36 @@
+﻿@model Entities.Concrete.Testimonial
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            @using (Html.BeginForm("Update", "Testimonial", FormMethod.Post))
+            {
+                <p class="card-description" style="font-size: 18px"> Referans Güncelleme </p>
+                <div class="mb-3">
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.Label("Ad-Soyad")
+                    @Html.TextBoxFor(x => x.ClientName, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Şirket")
+                    @Html.TextBoxFor(x => x.Company, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Başlık")
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Resim Yolu")
+                    @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                    <br />
+                    @Html.Label("Yorum")
+                    @Html.TextAreaFor(x => x.Comment,8,3,new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/corona-free-dark-bootstrap-admin-template-1.0.0/Template/assets/vendors/js/vendor.bundle.base.js"></script>
+
